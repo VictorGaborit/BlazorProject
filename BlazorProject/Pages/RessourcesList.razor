@@ -1,0 +1,49 @@
+﻿@page "/ressources-list"
+@using BlazorProject.Models
+
+<h3>Ressources List</h3>
+
+<DataGrid TItem="Ressource"
+          Data="@lesRessources"
+          ReadData="@OnReadData"
+          TotalItems="@nombreDeRessources"
+          PageSize="10"
+          ShowPager
+          Responsive>
+    <DataGridColumn TItem="Ressource" Field="@nameof(Ressource.Id)" Caption="#" />
+    <DataGridColumn TItem="Ressource" Field="@nameof(Ressource.Name)" Caption="Name" />
+    <DataGridColumn TItem="Ressource" Field="@nameof(Ressource.RessourceId)" Caption="Ressource Id" />
+    <DataGridColumn TItem="Ressource" Field="@nameof(Ressource.CreatedDate)" Caption="Created date" DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" />
+    <DataGridColumn TItem="Ressource" Field="@nameof(Ressource.UpdatedDate)" Caption="Updated date" DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" />
+</DataGrid>
+
+@*
+@if (toutesLesRessources != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Ressource Id</th>
+                <th>Type</th>
+                <th>Created Date</th>
+                <th>Updated Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ressource in toutesLesRessources)
+            {
+                <tr>
+                    <td>@ressource.Id</td>
+                    <td>@ressource.Name</td>
+                    <td>@ressource.RessourceId</td>
+                    <td>@ressource.GetType()</td>
+                    <td>@ressource.CreatedDate</td>
+                    <td>@ressource.UpdatedDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+*@
