@@ -1,0 +1,12 @@
+﻿<h3>Liste des items</h3>
+
+<EditForm Model="this">
+    <InputText id="search" @bind-Value="Text" />
+<button @onclick="search">Submit</button>
+</EditForm>
+
+
+@foreach (var item in ListItems)
+{
+    <inventory Item="item" NoDrop="true" />
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "id": 1,
+    "displayname": "Earthmark",
+    "name": "earthmark",
+    "stacksize": 8,
+    "maxdurability": 34,
+    "enchantcategories": [
+      "weapon",
+      "armor",
+      "armor"
+    ],
+    "repairwith": [],
+    "createddate": "2014-05-02",
+    "updateddate": null
+  },
+  {
+    "id": 2,
+    "displayname": "Medcom",
+    "name": "medcom",
+    "stacksize": 39,
+    "maxdurability": 9,
+    "enchantcategories": [
+      "breakable",
+      "weapon"
+    ],
+    "repairwith": [
+      "acacia_planks"
+    ],
+    "createddate": "2014-03-17",
+    "updateddate": null
+  },
+  {
+    "id": 3,
+    "displayname": "Overfork",
+    "name": "overfork",
+    "stacksize": 12,
+    "maxdurability": 101,
+    "enchantcategories": [],
+    "repairwith": [
+      "birch_planks"
+    ],
+    "createddate": "2018-12-20",
+    "updateddate": "2019-06-26"
+  },
+  {
+    "id": 4,
+    "displayname": "Flyboyz",
+    "name": "flyboyz",
+    "stacksize": 29,
+    "maxdurability": 116,
+    "enchantcategories": [
+      "vanishable",
+      "vanishable",
+      "breakable"
+    ],
+    "repairwith": [
+      "acacia_planks"
+    ],
+    "createddate": "2021-09-09",
+    "updateddate": null
+  },
+  {
+    "id": 5,
+    "displayname": "Krag",
+    "name": "krag",
+    "stacksize": 19,
+    "maxdurability": 34,
+    "enchantcategories": [
+      "armor",
+      "digger"
+    ],
+    "repairwith": [],
+    "createddate": "2019-08-07",
+    "updateddate": null
+  },
+  {
+    "id": 6,
+    "displayname": "Typhonica",
+    "name": "typhonica",
+    "stacksize": 61,
+    "maxdurability": 121,
+    "enchantcategories": [
+      "armor_chest"
+    ],
+    "repairwith": [
+      "warped_planks"
+    ],
+    "createddate": "2014-12-02",
+    "updateddate": null
+  },
+  {
+    "id": 7,
+    "displayname": "Quilm",
+    "name": "quilm",
+    "stacksize": 56,
+    "maxdurability": 73,
+    "enchantcategories": [
+      "armor_head"
+    ],
+    "repairwith": [
+      "spruce_planks",
+      "acacia_planks"
+    ],
+    "createddate": "2015-12-06",
+    "updateddate": null
+  },
+  {
+    "id": 8,
+    "displayname": "Dogspa",
+    "name": "dogspa",
+    "stacksize": 6,
+    "maxdurability": 59,
+    "enchantcategories": [
+      "armor_chest"
+    ],
+    "repairwith": [
+      "warped_planks"
+    ],
+    "createddate": "2021-11-11",
+    "updateddate": null
+  },
+  {
+    "id": 9,
+    "displayname": "Deepends",
+    "name": "deepends",
+    "stacksize": 38,
+    "maxdurability": 104,
+    "enchantcategories": [
+      "digger"
+    ],
+    "repairwith": [
+      "spruce_planks",
+      "warped_planks"
+    ],
+    "createddate": "2016-05-29",
+    "updateddate": null
+  },
+  {
+    "id": 10,
+    "displayname": "Delphide",
+    "name": "delphide",
+    "stacksize": 62,
+    "maxdurability": 75,
+    "enchantcategories": [
+      "vanishable",
+      "weapon",
+      "digger"
+    ],
+    "repairwith": [],
+    "createddate": "2016-11-01",
+    "updateddate": null
+  },
+  {
+    "id": 11,
+    "displayname": "Viocular",
+    "name": "viocular",
+    "stacksize": 56,
+    "maxdurability": 54,
+    "enchantcategories": [
+      "vanishable",
+      "breakable",
+      "digger"
+    ],
+    "repairwith": [
+      "dark_oak_planks",
+      "spruce_planks"
+    ],
+    "createddate": "2014-04-19",
+    "updateddate": null
+  },
+  {
+    "id": 12,
+    "displayname": "Papricut",
+    "name": "papricut",
+    "stacksize": 1,
+    "maxdurability": 84,
+    "enchantcategories": [],
+    "repairwith": [],
+    "createddate": "2022-06-12",
+    "updateddate": "2022-12-18"
+  },
+  {
+    "id": 13,
+    "displayname": "Bitrex",
+    "name": "bitrex",
+    "stacksize": 51,
+    "maxdurability": 29,
+    "enchantcategories": [
+      "armor_head",
+      "armor"
+    ],
+    "repairwith": [],
+    "createddate": "2016-07-10",
+    "updateddate": null
+  },
+  {
+    "id": 14,
+    "displayname": "Rotodyne",
+    "name": "rotodyne",
+    "stacksize": 51,
+    "maxdurability": 100,
+    "enchantcategories": [
+      "armor_chest",
+      "armor_head",
+      "weapon"
+    ],
+    "repairwith": [],
+    "createddate": "2017-07-25",
+    "updateddate": "2017-03-02"
+  },
+  {
+    "id": 15,
+    "displayname": "Recritube",
+    "name": "recritube",
+    "stacksize": 2,
+    "maxdurability": 101,
+    "enchantcategories": [
+      "weapon"
+    ],
+    "repairwith": [
+      "crimson_planks"
+    ],
+    "createddate": "2020-10-11",
+    "updateddate": null
+  },
+  {
+    "id": 16,
+    "displayname": "Talendula",
+    "name": "talendula",
+    "stacksize": 61,
+    "maxdurability": 108,
+    "enchantcategories": [
+      "armor_head"
+    ],
+    "repairwith": [],
+    "createddate": "2016-12-31",
+    "updateddate": null
+  },
+  {
+    "id": 17,
+    "displayname": "Conjurica",
+    "name": "conjurica",
+    "stacksize": 14,
+    "maxdurability": 3,
+    "enchantcategories": [],
+    "repairwith": [],
+    "createddate": "2015-08-07",
+    "updateddate": "2018-03-12"
+  },
+  {
+    "id": 18,
+    "displayname": "Isosure",
+    "name": "isosure",
+    "stacksize": 50,
+    "maxdurability": 18,
+    "enchantcategories": [
+      "armor_chest"
+    ],
+    "repairwith": [
+      "jungle_planks"
+    ],
+    "createddate": "2022-11-12",
+    "updateddate": null
+  }
+]
