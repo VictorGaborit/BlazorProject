@@ -2,7 +2,8 @@
 
 namespace BlazorProject.Models
 {
-    public abstract class Ressource
+    [Serializable]
+    class Ressource
     {
         public int Id { get; set; }
         public string Name { get; set; }

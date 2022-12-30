@@ -2,7 +2,7 @@
 
 namespace BlazorProject.Models
 {
-    public class Weapon : Weaponry
+    class Weapon : Weaponry
     {
         public WeaponType WeaponType { get; set; }
         

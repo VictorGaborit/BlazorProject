@@ -1,12 +1,13 @@
 ﻿using Blazorise.DataGrid;
 using BlazorProject.Models;
 using Microsoft.AspNetCore.Components;
+using Newtonsoft.Json;
 
 namespace BlazorProject.Pages
 {
     public partial class RessourcesList
     {
-        private List<Ressource> lesRessources;
+        private List<Ressource> toutesLesRessources;
 
         private int nombreDeRessources;
 
@@ -22,13 +23,22 @@ namespace BlazorProject.Pages
             {
                 return;
             }
+            List<Ressource> toutesLesRessources = new List<Ressource>();
 
-            var response = (await Http.GetFromJsonAsync<Item[]>($"{NavigationManager.BaseUri}fake-data.json")).Skip((e.Page - 1) * e.PageSize).Take(e.PageSize).ToList();
+            var response = await Http.GetAsync($"{NavigationManager.BaseUri}fake-data.json");
 
             if (!e.CancellationToken.IsCancellationRequested)
             {
-                nombreDeRessources = (await Http.GetFromJsonAsync<List<Item>>($"{NavigationManager.BaseUri}fake-data.json")).Count;
-                lesRessources = new List<Ressource>(response);
+                using (Stream stream = await response.Content.ReadAsStreamAsync())
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        JsonSerializer serializer = new JsonSerializer();
+                        serializer.TypeNameHandling = TypeNameHandling.Auto;
+                        toutesLesRessources = (List<Ressource>)serializer.Deserialize(reader, typeof(List<Ressource>));
+                        nombreDeRessources = toutesLesRessources.Count;
+                    }
+                }
             }
         }
     }

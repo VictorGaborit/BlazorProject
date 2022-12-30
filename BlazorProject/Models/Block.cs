@@ -2,7 +2,8 @@
 
 namespace BlazorProject.Models
 {
-    public class Block : Stackable
+    [Serializable]
+    class Block : Stackable
     {
         public double Hardness { get; set; }
        

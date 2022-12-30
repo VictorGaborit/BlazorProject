@@ -10,6 +10,8 @@
     <PackageReference Include="Blazorise.Bootstrap" Version="1.1.5" />
     <PackageReference Include="Blazorise.DataGrid" Version="1.1.5" />
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.1.5" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
+    <PackageReference Include="Vertiq.Serialization.Newtonsoft.Json" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

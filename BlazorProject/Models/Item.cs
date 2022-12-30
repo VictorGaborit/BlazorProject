@@ -2,7 +2,7 @@
 
 namespace BlazorProject.Models
 {
-    public class Item : Stackable
+    class Item : Stackable
     {
         [JsonConstructor]
         public Item(int id, string name, string ressourceId, DateTime createdDate, DateTime updatedDate,

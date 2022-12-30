@@ -2,7 +2,7 @@
 
 namespace BlazorProject.Models
 {
-    public abstract class Weaponry : Ressource
+    abstract class Weaponry : Ressource
     {
         public int Durability { get; set; }
         public Material Material { get; set; }
