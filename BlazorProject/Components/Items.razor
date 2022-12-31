@@ -1,15 +1,16 @@
-﻿<h3>Liste des items</h3>
+﻿<h3>@Localizer["item_list"]</h3>
 
 <EditForm Model="this">
     <InputText id="search" @bind-Value="Text" @oninput="searching"/>
-    <button @onclick="searching">Search</button>
+    <button @onclick="searching">@Localizer["search"]</button>
 </EditForm>
 
-@*@DotNet.invokeMethodAsync("searching");*@
+@*Je pense que quelque chose de ce genre corrigerais le listing par défaut lors du chargement de la page
+@DotNet.invokeMethodAsync("searching");*@
 
 @if (!haveAnyItem)
 {
-    <h3 style="color:red">No items found</h3>
+    <h3 style="color:red">@Localizer["error_message"]</h3>
 }
 else
 {

@@ -1,11 +1,15 @@
 ﻿using BlazorProject.Models;
+using BlazorProject.Pages;
 using BlazorProject.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
 
 namespace BlazorProject.Components
 {
     public partial class Items
     {
+        [Inject]
+        public IStringLocalizer<Inventaire> Localizer { get; set; }
         [Inject]
         public IDataService DataService { get; set; }
 
