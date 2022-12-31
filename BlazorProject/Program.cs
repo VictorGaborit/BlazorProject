@@ -3,6 +3,7 @@ using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Icons.FontAwesome;
 using BlazorProject.Data;
+using BlazorProject.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -13,7 +14,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddHttpClient();
-
+builder.Services.AddScoped<IDataService, DataLocalService>();
 builder.Services
    .AddBlazorise()
    .AddBootstrapProviders()

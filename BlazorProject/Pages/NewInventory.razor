@@ -1,11 +1,7 @@
-﻿@page "/inventory"
+﻿@page "/newInventory"
 @using BlazorProject.Models;
-@using BlazorProject.Components
+<h3>NewInventory</h3>
 
-<h3>Inventaire</h3>
-
-<Items Items="Items" ItemsTrouve="Items" />
-@*
 <EditForm Model="this">
     <InputText id="search" @bind-Value="TextValue" />
     <button @onclick="search">Submit</button>
@@ -23,15 +19,13 @@
         <DisplayTemplate>
             @if (File.Exists($"{WebHostEnvironment.WebRootPath}/images/{context.Name}.png"))
             {
-                <img src="images/@(context.Name).png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
+                    <img src="images/@(context.Name).png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
             }
             else
             {
-                <img src="images/default.png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
+                    <img src="images/default.png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
             }
         </DisplayTemplate>
     </DataGridColumn>
     <DataGridColumn TItem="Item" Field="@nameof(Item.DisplayName)" Caption="Display name" />
 </DataGrid>
-*@
-
