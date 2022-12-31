@@ -34,7 +34,7 @@ namespace BlazorProject.Pages
             if (!e.CancellationToken.IsCancellationRequested)
             {
                 items = await DataService.List(e.Page, e.PageSize);
-                allItems = await DataService.List(0, 100000000);
+                allItems = await DataService.List(0, await DataService.Count());
                 totalItem = await DataService.Count();
             }
         }
