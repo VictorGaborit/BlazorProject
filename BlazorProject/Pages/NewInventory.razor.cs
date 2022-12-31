@@ -7,11 +7,14 @@ namespace BlazorProject.Pages
 {
     public partial class NewInventory
     {
-        string TextValue { get; set; }
+        string Text { get; set; }
 
         private List<Item> items;
 
         private int totalItem;
+
+        [Parameter]
+        public List<Item> ItemsTrouve { get; set; }
 
         [Inject]
         public IDataService DataService { get; set; }
@@ -34,7 +37,8 @@ namespace BlazorProject.Pages
         }
         private void search()
         {
-
+            string mot = Text;
+            ItemsTrouve = items.Where(item => item.Name.Contains(mot) || item.DisplayName.Contains(mot)).ToList();
         }
     }
 }
