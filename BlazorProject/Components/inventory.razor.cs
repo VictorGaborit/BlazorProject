@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorProject.Components
 {
-    public partial class inventory
+    public partial class Inventory
     {
         [Parameter]
         public int Index { get; set; }

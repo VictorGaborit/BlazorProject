@@ -1,5 +1,4 @@
-﻿using BlazorProject.Models.MyFirstProject.Models;
-using BlazorProject.Models;
+﻿using BlazorProject.Models;
 using BlazorProject.Components;
 
 namespace BlazorProject.Services
