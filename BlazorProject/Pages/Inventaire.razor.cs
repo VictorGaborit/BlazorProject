@@ -3,11 +3,15 @@ using BlazorProject.Components;
 using BlazorProject.Models;
 using BlazorProject.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
+using System.Collections.Generic;
 
 namespace BlazorProject.Pages
 {
     public partial class Inventaire
     {
+        [Inject]
+        public IStringLocalizer<Inventaire> Localizer { get; set; }
         [Inject]
         public IDataService DataService { get; set; }
 
