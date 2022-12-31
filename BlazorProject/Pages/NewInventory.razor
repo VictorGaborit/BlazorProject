@@ -3,29 +3,35 @@
 <h3>NewInventory</h3>
 
 <EditForm Model="this">
-    <InputText id="search" @bind-Value="TextValue" />
-    <button @onclick="search">Submit</button>
+    <InputText id="search" @bind-Value="TextValue" @oninput="searching"/>
+    <button @onclick="searching">Submit</button>
 </EditForm>
 
-
-<DataGrid TItem="Item"
-          Data="@items"
-          ReadData="@OnReadData"
-          TotalItems="@totalItem"
-          PageSize="10"
-          ShowPager
-          Responsive>
-    <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption="Image">
-        <DisplayTemplate>
-            @if (File.Exists($"{WebHostEnvironment.WebRootPath}/images/{context.Name}.png"))
-            {
-                    <img src="images/@(context.Name).png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
-            }
-            else
-            {
-                    <img src="images/default.png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
-            }
-        </DisplayTemplate>
-    </DataGridColumn>
-    <DataGridColumn TItem="Item" Field="@nameof(Item.DisplayName)" Caption="Display name" />
-</DataGrid>
+@if (!haveAnyItem)
+{
+    <h2 style="color:red">Not any item found</h2>
+}
+else
+{
+    <DataGrid TItem="Item"
+              Data="@itemsFound"
+              ReadData="@OnReadData"
+              TotalItems="@totalItem"
+              PageSize="10"
+              ShowPager
+              Responsive>
+        <DataGridColumn TItem="Item" Field="@nameof(Item.Id)" Caption="Image">
+            <DisplayTemplate>
+                @if (File.Exists($"{WebHostEnvironment.WebRootPath}/images/{context.Name}.png"))
+                {
+                        <img src="images/@(context.Name).png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
+                }
+                else
+                {
+                        <img src="images/default.png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px" />
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="Item" Field="@nameof(Item.DisplayName)" Caption="Display name" />
+    </DataGrid>
+}
