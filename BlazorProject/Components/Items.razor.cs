@@ -17,13 +17,45 @@ namespace BlazorProject.Components
         [Parameter]
         public List<Item> ListItems { get; set; }
 
-        [Parameter]
-        public List<Item> ItemsTrouve { get; set; }
+        List<Item> itemsTrouve = new List<Item>();
+        bool haveAnyItem = true;
 
-        private void search()
+        private void searching()
         {
-            string mot = Text;
-            ItemsTrouve = ListItems.Where(item => item.Name.Contains(mot) || item.DisplayName.Contains(mot)).ToList();
+            if (Text is null || Text.Length == 0)
+            {
+                itemsTrouve.Clear();
+                itemsTrouve.AddRange(ListItems);
+                haveAnyItem = true;
+            }
+            else
+            {
+                itemsTrouve.Clear();
+                foreach (var item in ListItems)
+                {
+                    if ((item.Name.ToLower().Contains(Text.ToLower())) && !itemsTrouve.Contains(item))
+                    {
+                        Console.WriteLine(item.Name);
+                        if (item.Name.ToLower().Equals(Text.ToLower()))
+                        {
+                            itemsTrouve.Insert(0, item);
+                        }
+                        else
+                        {
+                            itemsTrouve.Add(item);
+                        }
+
+                    }
+                }
+            }
+            if (itemsTrouve.Count > 0)
+            {
+                haveAnyItem = true;
+            }
+            else
+            {
+                haveAnyItem = false;
+            }
         }
     }
 }

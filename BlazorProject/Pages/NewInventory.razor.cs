@@ -7,14 +7,16 @@ namespace BlazorProject.Pages
 {
     public partial class NewInventory
     {
-        string Text { get; set; }
+        string? TextValue { get; set; }
+        
+        bool haveAnyItem = true;
+        
+        private List<Item> itemsFound = new List<Item>();
 
         private List<Item> items;
+        private List<Item> allItems;
 
         private int totalItem;
-
-        [Parameter]
-        public List<Item> ItemsTrouve { get; set; }
 
         [Inject]
         public IDataService DataService { get; set; }
@@ -32,13 +34,45 @@ namespace BlazorProject.Pages
             if (!e.CancellationToken.IsCancellationRequested)
             {
                 items = await DataService.List(e.Page, e.PageSize);
+                allItems = await DataService.List(0, await DataService.Count());
                 totalItem = await DataService.Count();
             }
         }
-        private void search()
+        private void searching()
         {
-            string mot = Text;
-            ItemsTrouve = items.Where(item => item.Name.Contains(mot) || item.DisplayName.Contains(mot)).ToList();
+            if (TextValue is null || TextValue.Length == 0)
+            {
+                itemsFound.Clear();
+                itemsFound.AddRange(items);
+                haveAnyItem = true;
+            }
+            else
+            {
+                itemsFound.Clear();
+                foreach (var item in allItems)
+                {
+                    if ((item.Name.ToLower().Contains(TextValue.ToLower())) && !itemsFound.Contains(item))
+                    {
+                        if (item.Name.ToLower().Equals(TextValue.ToLower()))
+                        {
+                            itemsFound.Insert(0, item);
+                        }
+                        else
+                        {
+                            itemsFound.Add(item);
+                        }
+                            
+                    }
+                }
+            }
+            if(itemsFound.Count > 0)
+            {
+                haveAnyItem = true;
+            }
+            else
+            {
+                haveAnyItem = false;
+            }
         }
     }
 }

@@ -1,12 +1,20 @@
 ﻿<h3>Liste des items</h3>
 
 <EditForm Model="this">
-    <InputText id="search" @bind-Value="Text" />
-<button @onclick="search">Submit</button>
+    <InputText id="search" @bind-Value="Text" @oninput="searching"/>
+    <button @onclick="searching">Search</button>
 </EditForm>
 
+@*@DotNet.invokeMethodAsync("searching");*@
 
-@foreach (var item in ListItems)
+@if (!haveAnyItem)
 {
-    <Inventory Item="item" NoDrop="true" />
+    <h3 style="color:red">No items found</h3>
+}
+else
+{
+    @foreach (var item in itemsTrouve)
+    {
+        <Inventory Item="item" NoDrop="true" />
+    }
 }
